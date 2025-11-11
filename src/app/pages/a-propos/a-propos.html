@@ -1,0 +1,18 @@
+<div class="text-center text-2xl font-bold text-green-700 p-6">
+  Découvrez qui nous sommes sur la page À propos.
+</div>
+<app-formulaire (formSubmitted)="enregistrerPersonne($event)"></app-formulaire>
+
+<!-- Liste des personnes enregistrées -->
+<div class="mt-8 max-w-md mx-auto">
+  <h2 class="text-xl font-bold text-blue-800 mb-4">Personnes enregistrées :</h2>
+  <ul>
+    @for (personne of personnes; track personne) {
+      <li class="bg-gray-100 rounded p-3 mb-2 shadow">
+        <span class="font-semibold">{{ personne.prenom }} {{ personne.nom }}</span>
+        <span class="text-gray-500">— {{ personne.ville }}</span>
+      </li>
+    }
+
+  </ul>
+</div>
